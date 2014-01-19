@@ -73,7 +73,7 @@ def getDiskSpace():
 while True:
         #battery info
         value = readadc(0)
-        volts = (value * 3.3) / 1024
+        volts = (value * 4.25) / 1024
         battv = volts * 1.5
         #print ("%4d/1023 => %5.3f V => %4.1f V" % (value, volts, battv))
         #cmdstring = '/usr/bin/rrdtool update ' + RRD + ' N:' + str(round(battv,4))
