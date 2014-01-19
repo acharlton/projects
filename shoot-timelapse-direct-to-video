@@ -1,0 +1,6 @@
+#!/bin/bash
+
+timelapseName=timelapse-`date +\%Y-\%m-\%d-\%H-\%M-%S`
+mkdir -p /home/pi/captures/$timelapseName
+videofilename=/home/pi/captures/$timelapseName/$timelapseName.h264
+raspivid -o $videofilename -t 10800000 --framerate 2

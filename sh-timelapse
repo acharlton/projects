@@ -1,0 +1,7 @@
+#!/bin/bash
+
+timelapseName=timelapse-`date +\%Y-\%m-\%d-\%H-\%M-%S`
+mkdir -p /mnt/usb/captures/$timelapseName
+jpegfilename=/mnt/usb/captures/$timelapseName/must-rotate-180-$timelapseName-%07d.jpg
+#/usr/bin/raspistill -o $jpegfilename -t 108000000 -tl 2400
+/usr/bin/raspistill -o $jpegfilename -t 108000000 -tl 10000 -ex night

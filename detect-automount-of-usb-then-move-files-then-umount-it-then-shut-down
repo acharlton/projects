@@ -1,0 +1,17 @@
+#!/bin/bash
+
+	echo "waiting for flash drive."
+	while [ ! -d /mnt/usb/captures ]
+	do
+		sleep 10
+	done
+	echo "detected flash drive."
+	echo "moving files."
+	cd /home/pi/captures
+	# find . -iname *.jpg -exec mkdir -p `dirname {}` ; mv {} /mnt/usb/captures/{} \;
+	# find . -iname *.jpg -exec echo {} `basename "{}"` \;
+	find . -iname *.jpg -exec /home/pi/basic-mv-jpg-to-flash-drive {} \;
+	echo "umounting flash drive."
+	umount /mnt/usb
+	echo "now shutting down"
+	sudo shutdown -h now

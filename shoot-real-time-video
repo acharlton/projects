@@ -1,0 +1,7 @@
+#!/bin/bash
+
+outputDirectoryName=videos
+mkdir -p /home/pi/captures/$outputDirectoryName
+outputFileName=video-`date +\%Y-\%m-\%d-\%H-\%M-%S`.h264
+outputPathName=/home/pi/captures/$outputDirectoryName/$outputFileName
+raspivid -o $outputPathName -t 10800000 --framerate 30

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+outputDirectoryName=stills
+mkdir -p /home/pi/captures/$outputDirectoryName
+outputFileName=still-`date +\%Y-\%m-\%d-\%H-\%M-%S`.jpg
+outputPathName=/home/pi/captures/$outputDirectoryName/$outputFileName
+/usr/bin/raspistill -o $outputPathName -t 0

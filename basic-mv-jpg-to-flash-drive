@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo Moving $1
+mkdir -p /mnt/usb/captures/`dirname $1`
+mv $1 /mnt/usb/captures/`dirname $1`

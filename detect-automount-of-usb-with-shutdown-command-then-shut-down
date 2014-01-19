@@ -1,0 +1,11 @@
+#!/bin/bash
+
+	echo "waiting for flash drive with shutdown command."
+	while [ ! -f /mnt/usb/shutdown.txt ]
+	do
+		sleep 10
+	done
+	echo "detected flash drive with shutdown command."
+	umount /mnt/usb
+	echo "now shutting down"
+	sudo shutdown -h now
